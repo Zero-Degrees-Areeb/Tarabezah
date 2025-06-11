@@ -30,14 +30,6 @@ builder.Services.AddCors(options =>
             .AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod());
-
-    // Add a separate policy for SignalR that allows credentials
-    options.AddPolicy("SignalRPolicy",
-        builder => builder
-            .SetIsOriginAllowed(_ => true) // Allow any origin
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials()); // Needed for SignalR
 });
 
 // Register SignalR
