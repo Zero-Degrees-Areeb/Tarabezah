@@ -1,0 +1,6 @@
+@Tarabezah.Web_HostAddress = http://localhost:5136
+
+GET {{Tarabezah.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
