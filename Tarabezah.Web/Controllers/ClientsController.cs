@@ -50,6 +50,10 @@ public class ClientsController : ControllerBase
     [ProducesResponseType(typeof(ApiResponse<ClientDto>), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateClient([FromBody] CreateClientCommand command)
     {
+        IList<string> validationErrors = null;
+
+        validationErrors.Add("test");
+
         _logger.LogInformation("Received request to create client: {ClientName}", command.Name);
 
         try
